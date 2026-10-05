@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Instagram Downloader | AI Studio{% endblock %}
+{% block content %}
+<section class="tool-hero"><span class="eyebrow">INSTAGRAM DOWNLOADER</span><h1>ویدیو را از Instagram دریافت کن</h1><p>لینک امن Post یا Reel را وارد کن؛ اطلاعات محتوا از MajidAPI گرفته می‌شود.</p></section>
+<section class="panel form-panel"><form id="instagram-form"><label for="instagram-url">لینک Instagram</label><div class="input-row"><input id="instagram-url" type="url" placeholder="https://www.instagram.com/reel/..." autocomplete="off" required><button class="btn primary" type="submit">دریافت ویدیو</button></div></form></section>
+<section id="instagram-loading" class="state hidden"><div class="spinner"></div><span>در حال دریافت اطلاعات...</span></section>
+<section id="instagram-result" class="result-grid hidden"></section>
+<section id="instagram-error" class="state error hidden"></section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/instagram.js') }}"></script>{% endblock %}

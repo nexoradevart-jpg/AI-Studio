@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Book Downloader | AI Studio{% endblock %}
+{% block content %}
+<section class="tool-hero"><span class="eyebrow">BOOK DOWNLOADER</span><h1>کتاب موردنظرت را پیدا کن</h1><p>جستجو، دسته‌بندی، جدیدترین کتاب‌ها و جزئیات هر عنوان.</p></section>
+<section class="panel search-panel"><form id="book-search-form"><div class="input-row"><input id="book-query" type="search" placeholder="مثلاً شاهزاده کوچولو" maxlength="120"><button class="btn primary">جستجو</button></div></form><div id="categories" class="chip-list"></div></section>
+<section class="section-head compact"><div><span class="eyebrow">DISCOVER</span><h2 id="books-heading">جدیدترین کتاب‌ها</h2></div><button id="newest-btn" class="btn ghost small">جدیدترین‌ها</button></section>
+<section id="books-loading" class="state hidden"><div class="spinner"></div><span>در حال دریافت کتاب‌ها...</span></section>
+<section id="books-error" class="state error hidden"></section>
+<section id="books-grid" class="book-grid"></section>
+<div id="pagination" class="pagination"></div>
+<div id="book-modal" class="modal hidden"><div class="modal-backdrop"></div><article class="modal-card"><button id="modal-close" class="modal-close">×</button><div id="book-detail"></div></article></div>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/books.js') }}"></script>{% endblock %}

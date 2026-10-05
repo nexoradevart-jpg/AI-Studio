@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}AI Studio | داشبورد{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">MAJIDAPI • POWERED WORKSPACE</span>
+    <h1>ابزارهای کاربردی، سریع و <span>هوشمند</span> در یکجا</h1>
+    <p>یک داشبورد فارسی و مدرن برای دانلود محتوای Instagram، کشف کتاب و مشاهده قیمت‌های لحظه‌ای.</p>
+    <div class="hero-actions"><a class="btn primary" href="#tools">مشاهده ابزارها <span>←</span></a><a class="btn ghost" href="{{ url_for('prices.page') }}">داشبورد قیمت‌ها</a></div>
+  </div>
+  <div class="hero-orbit" aria-hidden="true"><div class="orbit-core">AI</div><span>✦</span><span>◈</span><span>∞</span></div>
+</section>
+
+<section id="tools" class="section-head"><div><span class="eyebrow">TOOLKIT</span><h2>ابزارهای شما</h2></div><span class="muted">همه‌چیز از یک رابط واحد</span></section>
+<section class="tool-grid">
+  <a class="tool-card" href="{{ url_for('instagram.page') }}"><div class="icon pink">📸</div><div><h3>Instagram Downloader</h3><p>دانلود ویدیو و Reel از Instagram</p></div><span class="arrow">←</span></a>
+  <a class="tool-card" href="{{ url_for('books.page') }}"><div class="icon purple">📚</div><div><h3>Book Downloader</h3><p>جستجو، مشخصات و دریافت کتاب</p></div><span class="arrow">←</span></a>
+  <a class="tool-card" href="{{ url_for('prices.page') }}?tab=currency"><div class="icon green">💰</div><div><h3>قیمت ارز</h3><p>مشاهده داده‌های ارزی</p></div><span class="arrow">←</span></a>
+  <a class="tool-card" href="{{ url_for('prices.page') }}?tab=gold"><div class="icon gold">🪙</div><div><h3>طلا و سکه</h3><p>قیمت‌های طلا و سکه</p></div><span class="arrow">←</span></a>
+  <a class="tool-card" href="{{ url_for('prices.page') }}?tab=crypto"><div class="icon blue">₿</div><div><h3>رمزارز</h3><p>نمایش قیمت رمزارزها</p></div><span class="arrow">←</span></a>
+  <a class="tool-card" href="{{ url_for('prices.page') }}?tab=car"><div class="icon orange">🚗</div><div><h3>خودرو</h3><p>مشاهده قیمت خودروها</p></div><span class="arrow">←</span></a>
+</section>
+<section class="feature-strip glass"><div><span class="mini-icon">⚡</span><strong>سریع</strong><p>درخواست‌ها از Backend امن و مدیریت‌شده عبور می‌کنند.</p></div><div><span class="mini-icon">🔒</span><strong>امن</strong><p>Token هرگز به مرورگر ارسال نمی‌شود و Proxy محدود است.</p></div><div><span class="mini-icon">◌</span><strong>Responsive</strong><p>تجربه یکپارچه روی موبایل، تبلت و دسکتاپ.</p></div></section>
+{% endblock %}

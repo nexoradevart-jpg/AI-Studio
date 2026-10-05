@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Price Dashboard | AI Studio{% endblock %}
+{% block content %}
+<section class="tool-hero"><span class="eyebrow">PRICE DASHBOARD</span><h1>بازار را یکجا ببین</h1><p>داده‌های ارز، طلا و سکه، رمزارز و خودرو از API دریافت می‌شوند.</p></section>
+<div class="tabs" role="tablist"><button data-tab="currency" class="tab active">💰 ارز</button><button data-tab="gold" class="tab">🪙 طلا و سکه</button><button data-tab="crypto" class="tab">₿ رمزارز</button><button data-tab="car" class="tab">🚗 خودرو</button></div>
+<section id="price-loading" class="state hidden"><div class="spinner"></div><span>در حال بروزرسانی قیمت‌ها...</span></section>
+<section id="price-error" class="state error hidden"></section>
+<section id="price-meta" class="price-meta hidden"></section>
+<section id="price-grid" class="price-grid"></section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/prices.js') }}"></script>{% endblock %}

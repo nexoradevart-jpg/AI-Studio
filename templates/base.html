@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07080d">
+  <title>{% block title %}AI Studio{% endblock %}</title>
+  <meta name="description" content="AI Studio؛ ابزارهای کاربردی و هوشمند در یکجا">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="site-header glass">
+    <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">✦</span><span>AI Studio</span></a>
+    <button class="nav-toggle" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="ناوبری اصلی">
+      <a href="{{ url_for('index') }}">خانه</a>
+      <a href="{{ url_for('instagram.page') }}">Instagram</a>
+      <a href="{{ url_for('books.page') }}">کتاب‌ها</a>
+      <a href="{{ url_for('prices.page') }}">قیمت‌ها</a>
+      <a href="/#about">درباره</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">{% block content %}{% endblock %}</main>
+
+  <footer id="about" class="site-footer">
+    <div><strong>AI Studio</strong><span>ابزارهای کاربردی، سریع و هوشمند در یکجا</span></div>
+    <div class="footer-note">ساخته‌شده با Python + Flask و MajidAPI</div>
+  </footer>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
