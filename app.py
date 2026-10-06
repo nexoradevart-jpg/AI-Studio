@@ -14,6 +14,7 @@ def create_app():
         SECRET_KEY=os.getenv("SECRET_KEY", "dev-change-me"),
     )
 
+
     from routes.instagram import instagram_bp
     from routes.books import books_bp
     from routes.prices import prices_bp
